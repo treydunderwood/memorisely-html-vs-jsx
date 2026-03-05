@@ -1,85 +1,98 @@
+/* Global reset so spacing and sizing behave consistently */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Page background and main layout behavior */
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f7f7f4;
-    display: flex;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Main typeface stack */
+    background-color: #f7f7f4; /* Soft, warm neutral background */
+    display: flex; /* Center the cards container horizontally and vertically */
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    min-height: 100vh; /* Make sure body fills the viewport height */
+    padding: 20px; /* Breathing room around the entire layout */
 }
 
+/* Wrapper that places the two cards next to each other */
 .cards-container {
     display: flex;
     flex-direction: row;
-    gap: 24px;
+    gap: 24px; /* Space between each pricing card */
     flex-wrap: nowrap;
     justify-content: center;
     align-items: flex-start;
 }
 
+/* Individual pricing card panel */
 .card {
     display: flex;
-    flex-direction: column;
-    min-height: 380px;
+    flex-direction: column; /* Stack content vertically */
+    min-height: 380px; /* Ensures both cards feel balanced in height */
     background-color: #f2f1ed;
     border-radius: 4px;
     padding: 16px;
     width: 320px;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevents cards from squashing on smaller widths */
 }
 
+/* Upper content area of each card (title, price, features) */
 .card-top {
     display: flex;
     flex-direction: column;
 }
 
+/* Plan name styling */
 .card-title {
     font-size: 22px;
     line-height: 28px;
     font-weight: 400;
     color: #26251e;
-    margin-bottom: 8px;
+    margin-bottom: 8px; /* Space below the plan title */
 }
 
+/* Price row wrapper (amount + period) */
 .card-price {
     font-size: 20px;
     color: rgba(38, 37, 30, 0.5);
     display: inline-flex;
-    align-items: baseline;
+    align-items: baseline; /* Align currency and period nicely on the baseline */
 }
 
+/* Main price number (e.g. $20, Free) */
 .card-price-amount {
     font-size: 22px;
     font-weight: 400;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Smaller price period label (e.g. /mo.) */
 .card-price-period {
     font-size: 14px;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Wrapper for the "Includes" text and the feature list */
 .card-content {
-    margin-bottom: 32px;
+    margin-bottom: 32px; /* Creates space before the button at the bottom */
 }
 
+/* "Includes" / "Everything in Hobby" label styling */
 .includes-text {
     font-size: 16px;
     color: rgba(38, 37, 30, 0.5);
     margin: 16px 0px;
 }
 
+/* Unordered list that holds the benefit items */
 .features-list {
-    list-style: none;
+    list-style: none; /* Remove default bullets */
     padding: 0;
 }
 
+/* Each individual feature row */
 .features-list li {
     display: flex;
     align-items: center;
@@ -88,61 +101,70 @@ body {
     color: #26251e;
 }
 
+/* Checkmark icon that precedes each feature */
 .checkmark {
     color: #26251e;
     font-size: 14px;
-    margin-right: 10px;
+    margin-right: 10px; /* Space between checkmark and text */
     font-weight: 400;
 }
 
+/* Base button style for both cards */
 .download-button {
-    margin-top: auto;
-    width: fit-content;
+    margin-top: auto; /* Pushes button to the bottom of the card */
+    width: fit-content; /* Button width hugs its label text */
     background-color: #e6e5e0;
     border: none;
-    border-radius: 999px;
+    border-radius: 999px; /* Fully pill-shaped button */
     padding: 14px 24px;
     font-size: 16px;
     font-weight: 500;
     color: #333;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease; /* Smooth hover / active feedback */
 }
 
+/* Hover state for secondary / neutral button */
 .download-button:hover {
     background-color: #D8D6CE;
 }
 
+/* Active (pressed) state for secondary / neutral button */
 .download-button:active {
     background-color: #D8D6CE;
 }
 
+/* Primary emphasis style for the Pro button */
 .download-button.primary {
     background-color: #111;
     color: #fff;
 }
 
+/* Hover state for primary button */
 .download-button.primary:hover {
     background-color: #333;
 }
 
+/* Active (pressed) state for primary button */
 .download-button.primary:active {
     background-color: #333;
 }
 
+/* Fixed label at the top center that describes the page */
 .page-label {
     position: fixed;
     top: 16px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Perfectly center horizontally */
     font-size: 14px;
     color: #666;
     background: #fff;
     padding: 8px 16px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Soft floating effect */
 }
 
+/* Strong text inside the page label (e.g. "HTML version") */
 .page-label strong {
     color: #333;
 }
